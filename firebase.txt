@@ -1,0 +1,2 @@
+install--- composer
+composer require kreait/firebase-php      ------install
