@@ -46,6 +46,7 @@ include("./dbcon.php");
                             </div>
                             <div class="form-group mb-3">
                                 <button type="submit" name="register_now_btn" class="btn btn-primary">Register New</button>
+                                <a href="./home.php" class="btn btn-primary">Home</a>
                             </div>
                         </form>
                     </div>

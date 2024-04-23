@@ -1,5 +1,5 @@
 <?php
-session_start();
+include("./authentication.php");
 include("./dbcon.php");
 ?>
 <!DOCTYPE html>
@@ -30,6 +30,7 @@ include("./dbcon.php");
             </div>
             <div class="col-md-9 my-3 text-end">
                 <a href="login.php" class="btn btn-success">Login</a>
+                <a href="logout.php" class="btn btn-danger">Logout</a>
                 <a href="register.php" class="btn btn-primary">Register</a>
             </div>
             <div class="col-md-12">

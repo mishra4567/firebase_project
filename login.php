@@ -1,5 +1,10 @@
 <?php
 session_start();
+if(isset($_SESSION['verified_user_id'])){
+    $_SESSION['status']="You are already Logged In";
+    header("location:home.php");
+    exit();
+}
 include("./dbcon.php");
 ?>
 <!DOCTYPE html>
@@ -17,10 +22,10 @@ include("./dbcon.php");
         <div class="row justify-content-center">
             <div class="col-md-4">
                 <?php
-                // if (isset($_SESSION['status'])) {
-                //     echo "<h4>" . $_SESSION['status'] . "</h4>";
-                //     unset($_SESSION['status']);
-                // }
+                if (isset($_SESSION['status'])) {
+                    echo "<h4 class='alert alert-success'>" . $_SESSION['status'] . "</h4>";
+                    unset($_SESSION['status']);
+                }
                 ?>
                 <div class="card mt-4">
                     <div class="card-header">
@@ -38,6 +43,7 @@ include("./dbcon.php");
                             </div>
                             <div class="form-group mb-3">
                                 <button type="submit" name="login_now_btn" class="btn btn-primary">Login Now</button>
+                                <a href="./register.php" class="btn btn-primary">Register</a>
                             </div>
                         </div>
                     </form>

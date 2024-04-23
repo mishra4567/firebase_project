@@ -13,6 +13,12 @@ if (isset($_POST['login_now_btn'])) {
         $idTokenString = $signInResult->idToken();
         try {
             $verifiedIdToken = $auth->verifyIdToken($idTokenString);
+            $uid=$verifiedIdToken->claims()->get('sub');
+            $_SESSION['verified_user_id']=$uid;
+            $_SESSION['idTokenString']=$idTokenString;
+            $_SESSION['status'] = "You are Logged in Succesfully";
+            header("location:home.php");
+            exit();
         } catch (InvalidToken $e) {
             echo 'The token is invalid' . $e->getMessage();
         } catch (\InvalidArgumentException $e) {
