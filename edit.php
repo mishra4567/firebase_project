@@ -1,3 +1,7 @@
+<?php
+session_start();
+include("./dbcon.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +11,7 @@
     <title>Firebase Project</title>
 </head>
 <body>
-<?php
-session_start();
-?>
+
 
 
 <div class="container">
@@ -17,7 +19,7 @@ session_start();
         <div class="col-md-12">
             <div class="card mt-4">
                 <div class="card-header">
-                    <h4>Firebase and php CRUD- ADD or Edit Data in firebase database
+                    <h4>Firebase and php CRUD- ADD or Edit and Update Data in firebase database
                         <a href="./index.php" class="btn btn-danger fload-end">BACK</a>
                     </h4>
                 </div>
@@ -32,24 +34,25 @@ session_start();
 
                             ?>
                             <form action="code.php" method="post">
+                                <input type="hidden" name="id" value="<?= $id ?>">
                                 <div class="form-group mb-3">
                                     <label for="">First Name</label>
-                                    <input type="text" name="firstname" class="form-control">
+                                    <input type="text" name="firstname" value="<?= $editdata['firstname'] ?>" class="form-control">
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="">Last Name</label>
-                                    <input type="text" name="lastname" class="form-control">
+                                    <input type="text" name="lastname" value="<?= $editdata['lastname'] ?>" class="form-control">
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="">Email ID</label>
-                                    <input type="text" name="email" class="form-control">
+                                    <input type="text" name="email" value="<?= $editdata['email'] ?>" class="form-control">
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="">Phone No.</label>
-                                    <input type="text" name="phone" class="form-control">
+                                    <input type="text" name="phone" value="<?= $editdata['phone'] ?>" class="form-control">
                                 </div>
                                 <div class="form-group mb-3">
-                                    <button type="submit" name="Update_data" class="btn btn-primary">Update</button>
+                                    <button type="submit" name="update_data" class="btn btn-primary">Update</button>
                                 </div>
                             </form>
                         </div>
