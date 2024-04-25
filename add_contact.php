@@ -30,7 +30,7 @@ session_start();
                     ?>
                     <div class="row justify-content-center">
                         <div class="col-md-6">
-                            <form action="code.php" method="post">
+                            <form action="code.php" method="post" enctype="multipart/form-data">
                                 <div class="form-group mb-3">
                                     <label for="">First Name</label>
                                     <input type="text" name="firstname" class="form-control">
@@ -46,6 +46,10 @@ session_start();
                                 <div class="form-group mb-3">
                                     <label for="">Phone No.</label>
                                     <input type="text" name="phone" class="form-control">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="">Profile Image</label>
+                                    <input type="file" name="pro_image" id="">
                                 </div>
                                 <div class="form-group mb-3">
                                     <button type="submit" name="save_data" class="btn btn-primary">save</button>

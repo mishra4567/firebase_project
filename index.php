@@ -55,6 +55,7 @@ include("./dbcon.php");
                                     <th>last name</th>
                                     <th>email</th>
                                     <th>phone number</th>
+                                    <th>image</th>
                                     <th>edit</th>
                                     <th>delete</th>
                                 </tr>
@@ -77,13 +78,14 @@ include("./dbcon.php");
                                             <td><?= $row['lastname']; ?></td>
                                             <td><?= $row['email']; ?></td>
                                             <td><?= $row['phone']; ?></td>
+                                            <td><img style="width: 100px;" src="product_img/<?php echo $row['image'] ?>" alt="product image"></td>
                                             <td>
-                                                <a href="edit.php?id=<?= $key; ?>" class="btn btn-success">Edit</a>
+                                                <a onclick="return confirm('Are you sure?')" href="edit.php?id=<?= $key; ?>" class="btn btn-success">Edit</a>
                                             </td>
                                             <td>
                                                 <form action="./code.php" method="post">
                                                     <input type="hidden" name="id_key" value="<?= $key; ?>">
-                                                    <button type="submit" name="delete_btn" class="btn btn-danger">Delete</button>
+                                                    <button onclick="return confirm('Are you sure?')" type="submit" name="delete_btn" class="btn btn-danger">Delete</button>
                                                 </form>
                                             </td>
                                         </tr>

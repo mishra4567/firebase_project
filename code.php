@@ -30,12 +30,17 @@ if (isset($_POST['save_data'])) {
     $lastname = $_POST['lastname'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
+    //image input
+    $buffer=$_FILES['pro_image']['tmp_name'];
+    $fileName=time().$_FILES['pro_image']['name'];
+    move_uploaded_file($buffer,"product_img/".$fileName);
 
     $postData = [
         'firstname' => $firstname,
         'lastname' => $lastname,
         'email' => $email,
         'phone' => $phone,
+        'image'=>$fileName,
 
     ];
     $ref_table = "contacts";
