@@ -15,6 +15,7 @@ include("./dbcon.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Firebase Project</title>
+    <script src="./assets/js/script.js"></script>
 </head>
 
 <body>
@@ -31,15 +32,15 @@ include("./dbcon.php");
                     <div class="card-header">
                         <h4>Login Form</h4>
                     </div>
-                    <form action="logincode.php" method="post">
+                    <form action="logincode.php" method="post" onsubmit="return validatePassword()">
                         <div class="card-body">
                             <div class="form-group mb-3">
                                 <label for="">Email Address </label>
-                                <input type="email" name="email" id="" class="form-control">
+                                <input type="email" name="email" id="" class="form-control" placeholder="Enter Email ID">
                             </div>
                             <div class="form-group mb-3">
                                 <label for="">Password</label>
-                                <input type="password" name="password" id="" class="form-control">
+                                <input type="password" name="password" id="password" maxlength="6" class="form-control" placeholder="Enter 6 Digit Password">
                             </div>
                             <div class="form-group mb-3">
                                 <button type="submit" name="login_now_btn" class="btn btn-primary">Login Now</button>
